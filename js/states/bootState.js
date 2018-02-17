@@ -21,9 +21,6 @@ lame.BootState = class BootState{
 		this.scale.pageAlignVertically = true
 		this.scale.pageAlignHorizontally = true
 
-		this.game.physics.startSystem(Phaser.Physics.ARCADE)
-
-
 
 		let level_text = this.game.cache.getText("level1"),
 	    	level_data = JSON.parse(level_text)
