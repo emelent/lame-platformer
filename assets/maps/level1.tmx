@@ -75,12 +75,53 @@
 </data>
  </layer>
  <objectgroup name="objects">
-  <object id="5" name="player1" type="player" gid="1" x="144" y="272" width="16" height="16"/>
-  <object id="6" name="enemy2" type="crawler" gid="2" x="48" y="352" width="16" height="16"/>
-  <object id="7" name="enemy1" type="crawler" gid="2" x="320" y="400" width="16" height="16"/>
-  <object id="9" name="enemy3" type="walker" gid="2" x="576" y="272" width="16" height="16"/>
-  <object id="10" name="objective" type="objective" gid="3" x="784" y="224" width="16" height="16"/>
-  <object id="12" name="coin" type="coin" gid="7" x="288" y="304" width="16" height="16"/>
-  <object id="20" name="weapon" type="weapon" gid="6" x="16" y="272" width="16" height="16"/>
+  <object id="5" name="player1" type="player" gid="1" x="144" y="272" width="16" height="16">
+   <properties>
+    <property name="group" value="players"/>
+    <property name="texture" value="temp"/>
+   </properties>
+  </object>
+  <object id="6" name="enemy2" type="crawler" gid="2" x="48" y="352" width="16" height="16">
+   <properties>
+    <property name="group" value="enemies"/>
+    <property name="initial_frame" type="int" value="1"/>
+    <property name="texture" value="temp"/>
+   </properties>
+  </object>
+  <object id="7" name="enemy1" type="crawler" gid="2" x="320" y="400" width="16" height="16">
+   <properties>
+    <property name="group" value="enemies"/>
+    <property name="initial_frame" type="int" value="1"/>
+    <property name="texture" value="temp"/>
+   </properties>
+  </object>
+  <object id="9" name="enemy3" type="walker" gid="2" x="576" y="272" width="16" height="16">
+   <properties>
+    <property name="group" value="enemies"/>
+    <property name="initial_frame" type="int" value="1"/>
+    <property name="texture" value="temp"/>
+   </properties>
+  </object>
+  <object id="10" name="objective" type="objective" gid="3" x="784" y="224" width="16" height="16">
+   <properties>
+    <property name="group" value="objectives"/>
+    <property name="initial_frame" type="int" value="2"/>
+    <property name="texture" value="temp"/>
+   </properties>
+  </object>
+  <object id="12" name="coin" type="coin" gid="7" x="288" y="304" width="16" height="16">
+   <properties>
+    <property name="group" value="items"/>
+    <property name="initial_frame" type="int" value="6"/>
+    <property name="texture" value="temp"/>
+   </properties>
+  </object>
+  <object id="20" name="weapon" type="weapon" gid="6" x="16" y="272" width="16" height="16">
+   <properties>
+    <property name="group" value="items"/>
+    <property name="initial_frame" type="int" value="5"/>
+    <property name="texture" value="temp"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

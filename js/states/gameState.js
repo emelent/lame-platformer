@@ -1,6 +1,7 @@
 lame.GameState = class GameState{
 	init(level_data){
 		this.level_data = level_data
+		this.entities = {}
 	}
 
 	create(){
@@ -38,77 +39,60 @@ lame.GameState = class GameState{
 
 
 		this.backgroundLayer.resizeWorld()
-		this.createPlayer()
-
-
+		// this.createPlayer()
+		this.createGroups()
+		this.createEntities()
 	}
 
 	update(){
-		this.player.body.velocity.x = 0
-		const SPEED = 100
 
-
-		const hitLayer = this.game.physics.arcade.collide(
-			this.player,
-			this.collisionLayer
-		)
-
-		// console.log('touch down',  this.player.body.touching)
-		if(this.cursors.left.isDown){
-			this.player.body.velocity.x -= SPEED
-		} else if(this.cursors.right.isDown){
-			this.player.body.velocity.x = SPEED
-		}
-
-		if(this.cursors.up.isDown && this.player.body.blocked.down){	
-			this.player.body.velocity.y -=400
-		}
 	}
 
-
-	createPlayer(){
-		const result = this.findObjectsByType(
-			'player',
-			this.map,
-			'objects'
-		)[0]
-
-		this.player = this.game.add.sprite(
-			result.x,
-			result.y,
-			'temp'
-		)
-
-
-		this.player.frame = 0
-		this.player.scale.setTo(1.2, 1.2)
-
-
-		// add le physics
-		this.game.physics.arcade.enable(this.player)
-		this.player.body.collideWorldBounds = true
-		// this.player.body.bounce.y = 0.2;
-    	// this.player.body.gravity.y = 300;
-
-		console.log('player=>', this.player.body)
-
-		this.player.anchor.setTo(0.5)
-		this.game.camera.follow(this.player)
-
-		this.cursors = this.game.input.keyboard.createCursorKeys()
-	}
-
-	findObjectsByType(type, map, layer){
-		const result = []
-		map.objects[layer].forEach(el  => {
-			if(el.type === type){
-				//  invert y axis Phaser uses top left,  Tiled  uses  bottom left
-				el.y -= map.tileHeight
-				console.log('y =>', el.y)
-				result.push(el)
-			}
+	createGroups(){
+		this.groups = {}
+		this.level_data.groups.forEach(groupName => {
+			this.groups[groupName] = this.game.add.group()
 		})
-		return result
 	}
 
+	createEntities(){
+		this.entities = {}
+		this.map.objects.objects.forEach(obj => {
+			let ent = this.createEntFromObj(obj)
+			this.entities[obj.gid] = ent
+		})
+	}
+
+	createEntFromObj(obj){
+		const {x, y, type, name, properties} = obj
+	    const pos =  {
+	    	x,
+	    	y: y - this.map.tileHeight
+	    }
+	    let EntityType = Entity
+
+
+	    // create object according to its type
+	    switch (type) {
+	    	case "player":
+	    		EntityType = Player
+	    		break
+	    	
+	    	// case "crawler":
+	    	// 	EntityType = Player
+	    	// 	break
+	    	
+	    	// case "jumper":
+	    	// 	EntityType = Player
+	    	// 	break
+
+	    }
+	    if (!EntityType) return null
+
+    	return new EntityType(
+    		this,
+    		pos,
+    		properties
+		)
+	}
 }

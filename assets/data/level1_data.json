@@ -1,3 +1,9 @@
 {
-	"name": "level1"
+	"name": "level1",
+	"groups":[
+		"players",
+		"enemies",
+		"items",
+		"objectives"
+	]
 }

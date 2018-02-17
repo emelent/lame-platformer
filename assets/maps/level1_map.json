@@ -39,6 +39,16 @@
                  "height":16,
                  "id":5,
                  "name":"player1",
+                 "properties":
+                    {
+                     "group":"players",
+                     "texture":"temp"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "texture":"string"
+                    },
                  "rotation":0,
                  "type":"player",
                  "visible":true,
@@ -51,6 +61,18 @@
                  "height":16,
                  "id":6,
                  "name":"enemy2",
+                 "properties":
+                    {
+                     "group":"enemies",
+                     "initial_frame":1,
+                     "texture":"temp"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "initial_frame":"int",
+                     "texture":"string"
+                    },
                  "rotation":0,
                  "type":"crawler",
                  "visible":true,
@@ -63,6 +85,18 @@
                  "height":16,
                  "id":7,
                  "name":"enemy1",
+                 "properties":
+                    {
+                     "group":"enemies",
+                     "initial_frame":1,
+                     "texture":"temp"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "initial_frame":"int",
+                     "texture":"string"
+                    },
                  "rotation":0,
                  "type":"crawler",
                  "visible":true,
@@ -75,6 +109,18 @@
                  "height":16,
                  "id":9,
                  "name":"enemy3",
+                 "properties":
+                    {
+                     "group":"enemies",
+                     "initial_frame":1,
+                     "texture":"temp"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "initial_frame":"int",
+                     "texture":"string"
+                    },
                  "rotation":0,
                  "type":"walker",
                  "visible":true,
@@ -87,6 +133,18 @@
                  "height":16,
                  "id":10,
                  "name":"objective",
+                 "properties":
+                    {
+                     "group":"objectives",
+                     "initial_frame":2,
+                     "texture":"temp"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "initial_frame":"int",
+                     "texture":"string"
+                    },
                  "rotation":0,
                  "type":"objective",
                  "visible":true,
@@ -99,6 +157,18 @@
                  "height":16,
                  "id":12,
                  "name":"coin",
+                 "properties":
+                    {
+                     "group":"items",
+                     "initial_frame":6,
+                     "texture":"temp"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "initial_frame":"int",
+                     "texture":"string"
+                    },
                  "rotation":0,
                  "type":"coin",
                  "visible":true,
@@ -111,6 +181,18 @@
                  "height":16,
                  "id":20,
                  "name":"weapon",
+                 "properties":
+                    {
+                     "group":"items",
+                     "initial_frame":5,
+                     "texture":"temp"
+                    },
+                 "propertytypes":
+                    {
+                     "group":"string",
+                     "initial_frame":"int",
+                     "texture":"string"
+                    },
                  "rotation":0,
                  "type":"weapon",
                  "visible":true,

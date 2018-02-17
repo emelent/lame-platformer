@@ -27,7 +27,6 @@ lame.LoadState = class LoadState{
 	}
 
 	create(){
-		console.log('level up')
 		this.state.start(
 			'gameState', 
 			true,
