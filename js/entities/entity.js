@@ -4,6 +4,15 @@ class Entity extends Phaser.Sprite{
 		context.groups[props.group].add(this)
 		this.context = context
 		this.frame = props.initial_frame
-		console.log(props)
+		this.name = props.name
+		this.game.physics.arcade.enable(this)
+
+	}
+
+	update(){
+		this.game.physics.arcade.collide(
+			this,
+			this.context.collisionLayer
+		)
 	}
 }

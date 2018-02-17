@@ -1,6 +1,6 @@
 lame.GameState = class GameState{
-	init(level_data){
-		this.level_data = level_data
+	init(levelData){
+		this.levelData = levelData
 		this.entities = {}
 	}
 
@@ -10,7 +10,7 @@ lame.GameState = class GameState{
 		this.game.physics.startSystem(Phaser.Physics.ARCADE)
 		this.game.physics.arcade.gravity.y = 950
 
-		this.map = this.game.add.tilemap(this.level_data.name)
+		this.map = this.game.add.tilemap(this.levelData.name)
 		this.map.addTilesetImage('temp_tiles', 'temp')
 
 		this.backgroundLayer = this.map.createLayer('background')
@@ -50,7 +50,7 @@ lame.GameState = class GameState{
 
 	createGroups(){
 		this.groups = {}
-		this.level_data.groups.forEach(groupName => {
+		this.levelData.groups.forEach(groupName => {
 			this.groups[groupName] = this.game.add.group()
 		})
 	}
@@ -78,13 +78,19 @@ lame.GameState = class GameState{
 	    		EntityType = Player
 	    		break
 	    	
-	    	// case "crawler":
-	    	// 	EntityType = Player
-	    	// 	break
-	    	
-	    	// case "jumper":
-	    	// 	EntityType = Player
-	    	// 	break
+	    	case "objective":
+	    		EntityType = Objective
+	    		break
+
+	    	case "weapon":	
+	    	case "coin":
+	    		EntityType = Item
+	    		break
+
+	    	case "walker":
+	    	case "crawler":
+	    		EntityType = Enemy
+	    		break
 
 	    }
 	    if (!EntityType) return null
@@ -94,5 +100,9 @@ lame.GameState = class GameState{
     		pos,
     		properties
 		)
+	}
+
+	restartLevel(){
+    	this.game.state.restart(true, false, this.levelData)
 	}
 }
