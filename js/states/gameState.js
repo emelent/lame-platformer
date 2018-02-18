@@ -1,7 +1,6 @@
 lame.GameState = class GameState{
 	init(levelData){
 		this.levelData = levelData
-		this.entities = {}
 	}
 
 	create(){
@@ -15,6 +14,7 @@ lame.GameState = class GameState{
 
 		this.backgroundLayer = this.map.createLayer('background')
 		this.collisionLayer = this.map.createLayer('collision')
+
 		this.map.setCollisionBetween(
 			1,
 			100,
@@ -22,24 +22,8 @@ lame.GameState = class GameState{
 			'collision'
 		)
 
-
-		// collision method 2
-		// const collision_tiles = []
-		// console.log('layer =>', this.collisionLayer.layer.data)
-		// this.collisionLayer.layer.data.forEach(
-		// 	data_row => { // find tiles used in the layer
-		// 		data_row.forEach(tile => {
-		// 			// check if it's a valid tile index and isn't already in the list
-		// 			if (tile.index > 0 && collision_tiles.indexOf(tile.index) === -1) {
-		// 			    collision_tiles.push(tile.index)
-		// 			}
-		// 		})
-		// 	})
-		// this.map.setCollision(collision_tiles, true, 'collision')
-
-
 		this.backgroundLayer.resizeWorld()
-		// this.createPlayer()
+		this.camera.setSize(640, 480)
 		this.createGroups()
 		this.createEntities()
 	}
@@ -57,6 +41,7 @@ lame.GameState = class GameState{
 
 	createEntities(){
 		this.entities = {}
+		this.players = []
 		this.map.objects.objects.forEach(obj => {
 			let ent = this.createEntFromObj(obj)
 			this.entities[obj.gid] = ent
@@ -101,7 +86,10 @@ lame.GameState = class GameState{
     		properties
 		)
 	}
-
+	render () {
+		this.game.debug.cameraInfo(this.game.camera,  32, 32)
+	
+	}
 	restartLevel(){
     	this.game.state.restart(true, false, this.levelData)
 	}

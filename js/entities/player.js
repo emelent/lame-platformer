@@ -11,10 +11,10 @@ class Player extends Entity{
 		this.body.collideWorldBounds = true
 		this.body.bounce.y = 0.2;
 
+		this.game.camera.follow(this)
 
-		// this.game.camera.follow(this)
-		
 		this.cursors = this.game.input.keyboard.createCursorKeys()
+		this.context.players.push(this)
 	}
 
 	update(){
