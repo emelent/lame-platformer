@@ -160,8 +160,8 @@
                  "properties":
                     {
                      "group":"items",
-                     "initial_frame":6,
-                     "texture":"temp"
+                     "initial_frame":2,
+                     "texture":"items"
                     },
                  "propertytypes":
                     {
@@ -184,8 +184,8 @@
                  "properties":
                     {
                      "group":"items",
-                     "initial_frame":5,
-                     "texture":"temp"
+                     "initial_frame":1,
+                     "texture":"items"
                     },
                  "propertytypes":
                     {
