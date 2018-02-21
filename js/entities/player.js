@@ -9,15 +9,15 @@ class Player extends Entity{
 		// add le physics
 		this.game.physics.arcade.enable(this)
 		this.body.collideWorldBounds = true
-		this.body.bounce.y = 0.2;
 
 		this.game.camera.follow(this)
 
-		this.animations.add('walk', [0, 1], 5, true)
-		this.animations.add('jump', [2], 5, true)
+		this.animations.add('walk', [0, 1, 2], 5, true)
 		this.animations.add('shoot', [3], 5, true)
-
-		this.animations.add('idle', [0], 5, true)
+		this.animations.add('jump', [4], 5, true)
+		this.animations.add('idle', [5], 5, true)
+		this.animations.add('win', [6], 5, true)
+		this.animations.add('die', [7], 5, true)
 		this.animations.play('idle')
 
 		this.cursors = this.game.input.keyboard.createCursorKeys()

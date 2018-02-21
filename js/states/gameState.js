@@ -67,9 +67,11 @@ lame.GameState = class GameState{
 	    		EntityType = Objective
 	    		break
 
-	    	case "weapon":	
+			case "weapon":	
+				EntityType = Item
+				break
 	    	case "coin":
-	    		EntityType = Item
+	    		EntityType = Coin
 				break
 				
 	    	case "slime":

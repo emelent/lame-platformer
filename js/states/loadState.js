@@ -12,6 +12,7 @@ lame.LoadState = class LoadState{
 		this.preloadBar.anchor.setTo(0.5)
 		this.load.setPreloadSprite(this.preloadBar)
 
+		// LOAD SOME SPRITESHEETS
 		this.load.spritesheet(
 			'temp',
 			'./assets/images/temp.png', 
@@ -33,6 +34,10 @@ lame.LoadState = class LoadState{
 			16, 16
 		)
 
+		// LOAD SOME SOUNDS
+		this.load.audio('collect', 'assets/sounds/pickup.wav')
+		
+		// LOAD THE LEVEL TILEMAP
 		this.load.tilemap(
 			'level1',
 			'./assets/maps/level1_map.json',
