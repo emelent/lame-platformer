@@ -69,12 +69,12 @@ class Player extends Entity{
 			this.body.velocity.y -=400
 
 			this.animations.play('jump')
-		}else{
-
 		}
 
 		if(!this.body.blocked.down && !this.body.touching.down){
 			this.animations.play('jump')
+		}else if(this.cursors.down.isDown){
+			this.animations.play('shoot')
 		}else if(this.body.velocity.x === 0){
 			this.animations.play('idle')
 		}

@@ -4,6 +4,9 @@
 		"players",
 		"enemies",
 		"items",
-		"objectives"
+		"objectives",
+		"terminals",
+		"breakables",
+		"traps"
 	]
 }

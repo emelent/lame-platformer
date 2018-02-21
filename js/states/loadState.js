@@ -33,10 +33,21 @@ lame.LoadState = class LoadState{
 			'./assets/images/items.png', 
 			16, 16
 		)
+		this.load.spritesheet(
+			'terminals',
+			'./assets/images/terminals.png', 
+			16, 16
+		)
+
+		this.load.spritesheet(
+			'tileset-1',
+			'./assets/images/tileset-1.png', 
+			16, 16
+		)
 
 		// LOAD SOME SOUNDS
 		this.load.audio('collect', 'assets/sounds/pickup.wav')
-		
+
 		// LOAD THE LEVEL TILEMAP
 		this.load.tilemap(
 			'level1',
