@@ -87,7 +87,8 @@ lame.GameState = class GameState{
 		)
 	}
 	render () {
-		this.game.debug.cameraInfo(this.game.camera,  32, 32)
+		// this.game.debug.bodyInfo(this.players[0], 32, 32)
+		// this.game.debug.cameraInfo(this.game.camera,  32, 32)
 	
 	}
 	restartLevel(){
