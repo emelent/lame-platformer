@@ -3,7 +3,7 @@ class Player extends Entity{
 		super(...args)
 
 		this.frame = 0
-		// this.scale.setTo(1.2, 1.2)
+		this.scale.setTo(2)
 		this.anchor.setTo(0.5)
 
 		// add le physics

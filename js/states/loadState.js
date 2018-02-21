@@ -17,6 +17,11 @@ lame.LoadState = class LoadState{
 			'./assets/images/temp.png', 
 			16, 16
 		)
+		this.load.spritesheet(
+			'player',
+			'./assets/images/player.png', 
+			16, 16
+		)
 
 		this.load.tilemap(
 			'level1',

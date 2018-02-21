@@ -42,7 +42,7 @@
                  "properties":
                     {
                      "group":"players",
-                     "texture":"temp"
+                     "texture":"player"
                     },
                  "propertytypes":
                     {
