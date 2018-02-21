@@ -13,8 +13,17 @@ class Player extends Entity{
 
 		this.game.camera.follow(this)
 
+		this.animations.add('walk', [0, 1], 5, true)
+		this.animations.add('jump', [2], 5, true)
+		this.animations.add('shoot', [3], 5, true)
+
+		this.animations.add('idle', [0], 5, true)
+		this.animations.play('idle')
+
 		this.cursors = this.game.input.keyboard.createCursorKeys()
 		this.context.players.push(this)
+
+		this.GROUND_Y = -2.64
 	}
 
 	update(){
@@ -48,17 +57,27 @@ class Player extends Entity{
 
 		if(this.cursors.left.isDown){
 			this.body.velocity.x -= SPEED
+			this.animations.play('walk')
+			this.scale.setTo(-2, 2)
 		} else if(this.cursors.right.isDown){
 			this.body.velocity.x = SPEED
+			this.animations.play('walk')
+			this.scale.setTo(2)
 		}
 
 		if(this.cursors.up.isDown && this.body.blocked.down){	
 			this.body.velocity.y -=400
-		}
-		if(this.cursors.up.isDown && this.body.touching.down){	
-			this.body.velocity.y -=400
+
+			this.animations.play('jump')
+		}else{
+
 		}
 
+		if(!this.body.blocked.down && !this.body.touching.down){
+			this.animations.play('jump')
+		}else if(this.body.velocity.x === 0){
+			this.animations.play('idle')
+		}
 	}
 
 	collectItem(player, item){
