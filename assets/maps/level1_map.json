@@ -65,7 +65,7 @@
                     {
                      "group":"enemies",
                      "initial_frame":1,
-                     "texture":"temp"
+                     "texture":"slime"
                     },
                  "propertytypes":
                     {
@@ -74,7 +74,7 @@
                      "texture":"string"
                     },
                  "rotation":0,
-                 "type":"crawler",
+                 "type":"slime",
                  "visible":true,
                  "width":16,
                  "x":48,
@@ -89,7 +89,7 @@
                     {
                      "group":"enemies",
                      "initial_frame":1,
-                     "texture":"temp"
+                     "texture":"slime"
                     },
                  "propertytypes":
                     {
@@ -98,7 +98,7 @@
                      "texture":"string"
                     },
                  "rotation":0,
-                 "type":"crawler",
+                 "type":"slime",
                  "visible":true,
                  "width":16,
                  "x":272,
@@ -113,7 +113,7 @@
                     {
                      "group":"enemies",
                      "initial_frame":1,
-                     "texture":"temp"
+                     "texture":"slime"
                     },
                  "propertytypes":
                     {
@@ -122,7 +122,7 @@
                      "texture":"string"
                     },
                  "rotation":0,
-                 "type":"walker",
+                 "type":"slime",
                  "visible":true,
                  "width":16,
                  "x":576,
