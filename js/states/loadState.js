@@ -24,13 +24,18 @@ lame.LoadState = class LoadState{
 			16, 16
 		)
 		this.load.spritesheet(
-			'slime',
-			'./assets/images/slime.png', 
+			'enemies',
+			'./assets/images/enemies.png', 
 			16, 16
 		)
 		this.load.spritesheet(
 			'items',
 			'./assets/images/items.png', 
+			16, 16
+		)
+		this.load.spritesheet(
+			'transparent',
+			'./assets/images/transparent.png', 
 			16, 16
 		)
 		this.load.spritesheet(

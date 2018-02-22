@@ -52,8 +52,13 @@ lame.GameState = class GameState{
 		this.entities = {}
 		this.players = []
 		this.map.objects.objects.forEach(obj => {
+			try{
 			let ent = this.createEntFromObj(obj)
 			this.entities[obj.gid] = ent
+			}catch(e){
+				console.log('Failed to create =>', obj)
+				throw(e)
+			}
 		})
 	}
 
@@ -92,6 +97,9 @@ lame.GameState = class GameState{
 				break
 			case "block":
 				EntityType = Block
+				break
+			case "stopper":
+				EntityType = Stopper
 				break
 
 	    }

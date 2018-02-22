@@ -1,14 +1,31 @@
 class Slime extends Enemy{
-	constructor(...args){
-		super(...args)
+	constructor(context, pos, props){
+		super(context, pos, props)
 
-		this.scale.setTo(1.5)
 		this.anchor.setTo(0.5)
 
-		this.animations.add('idle', [0], 5, true)
-		this.animations.add('walk', [0, 1], 5, true)
-		this.animations.add('die', [2], 5, true)
+		this.animations.add('walk', [0, 1, 2], 5, true)
+		this.animations.play('walk')
+		this.direction = 1
+		this.MOVE_SPEED = props.speed
+		this.SCALE = 1.5
+		this.body.immovable = true
+		this.switchDirection()
+	}
 
-		this.animations.play('idle')
+	update(){
+		this.game.physics.arcade.collide(
+			this,
+			this.context.groups.stoppers,
+			this.switchDirection,
+			null,
+			this
+		)
+	}
+
+	switchDirection(){
+		this.direction *= -1
+		this.body.velocity.x = this.direction * this.MOVE_SPEED
+		this.scale.setTo(this.SCALE * this.direction, this.SCALE)
 	}
 }

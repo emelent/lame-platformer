@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="30" tilewidth="16" tileheight="16" nextobjectid="27">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="100" height="30" tilewidth="16" tileheight="16" nextobjectid="86">
  <tileset firstgid="1" name="tileset-1" tilewidth="16" tileheight="16" tilecount="40" columns="8">
   <image source="../images/tileset-1.png" width="128" height="80"/>
  </tileset>
@@ -14,6 +14,9 @@
  </tileset>
  <tileset firstgid="77" name="terminals" tilewidth="16" tileheight="32" tilecount="4" columns="2">
   <image source="../images/terminals.png" width="32" height="64"/>
+ </tileset>
+ <tileset firstgid="81" name="temp" tilewidth="16" tileheight="16" tilecount="8" columns="8">
+  <image source="../images/temp.png" width="128" height="16"/>
  </tileset>
  <layer name="background" width="100" height="30" visible="0">
   <data encoding="csv">
@@ -215,6 +218,131 @@
     <property name="group" value="traps"/>
     <property name="initial_frame" type="int" value="12"/>
     <property name="texture" value="tileset-1"/>
+   </properties>
+  </object>
+  <object id="27" name="enemy1" type="slime" gid="58" x="400" y="304" width="16" height="16">
+   <properties>
+    <property name="group" value="enemies"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="speed" type="int" value="50"/>
+    <property name="texture" value="enemies"/>
+   </properties>
+  </object>
+  <object id="29" name="enemy2" type="bat" gid="66" x="368" y="128" width="16" height="16">
+   <properties>
+    <property name="group" value="enemies"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="speed" type="int" value="50"/>
+    <property name="texture" value="enemies"/>
+   </properties>
+  </object>
+  <object id="31" name="enemy3" type="bat" gid="66" x="512" y="128" width="16" height="16">
+   <properties>
+    <property name="group" value="enemies"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="speed" type="int" value="50"/>
+    <property name="texture" value="enemies"/>
+   </properties>
+  </object>
+  <object id="32" name="enemy4" type="slime" gid="57" x="608" y="352" width="16" height="16">
+   <properties>
+    <property name="group" value="enemies"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="speed" type="int" value="50"/>
+    <property name="texture" value="enemies"/>
+   </properties>
+  </object>
+  <object id="33" name="enemy5" type="grub" gid="61" x="1088" y="416" width="16" height="16">
+   <properties>
+    <property name="group" value="enemies"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="speed" type="int" value="50"/>
+    <property name="texture" value="enemies"/>
+   </properties>
+  </object>
+  <object id="34" name="enemy5" type="grub" gid="61" x="1104" y="272" width="16" height="16">
+   <properties>
+    <property name="group" value="enemies"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="speed" type="int" value="50"/>
+    <property name="texture" value="enemies"/>
+   </properties>
+  </object>
+  <object id="62" name="stopper" type="stopper" gid="87" x="272" y="304" width="16" height="16">
+   <properties>
+    <property name="group" value="stoppers"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="texture" value="transparent"/>
+   </properties>
+  </object>
+  <object id="63" name="stopper" type="stopper" gid="87" x="528" y="304" width="16" height="16">
+   <properties>
+    <property name="group" value="stoppers"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="texture" value="transparent"/>
+   </properties>
+  </object>
+  <object id="64" name="stopper" type="stopper" gid="87" x="560" y="352" width="16" height="16">
+   <properties>
+    <property name="group" value="stoppers"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="texture" value="transparent"/>
+   </properties>
+  </object>
+  <object id="66" name="stopper" type="stopper" gid="87" x="1104" y="416" width="16" height="16">
+   <properties>
+    <property name="group" value="stoppers"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="texture" value="transparent"/>
+   </properties>
+  </object>
+  <object id="67" name="stopper" type="stopper" gid="87" x="976" y="416" width="16" height="16">
+   <properties>
+    <property name="group" value="stoppers"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="texture" value="transparent"/>
+   </properties>
+  </object>
+  <object id="68" name="stopper" type="stopper" gid="87" x="1072" y="272" width="16" height="16">
+   <properties>
+    <property name="group" value="stoppers"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="texture" value="transparent"/>
+   </properties>
+  </object>
+  <object id="69" name="stopper" type="stopper" gid="87" x="640" y="128" width="16" height="16">
+   <properties>
+    <property name="group" value="stoppers"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="texture" value="transparent"/>
+   </properties>
+  </object>
+  <object id="70" name="stopper" type="stopper" gid="87" x="432" y="128" width="16" height="16">
+   <properties>
+    <property name="group" value="stoppers"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="texture" value="transparent"/>
+   </properties>
+  </object>
+  <object id="71" name="stopper" type="stopper" gid="87" x="224" y="128" width="16" height="16">
+   <properties>
+    <property name="group" value="stoppers"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="texture" value="transparent"/>
+   </properties>
+  </object>
+  <object id="84" name="stopper" type="stopper" gid="87" x="672" y="352" width="16" height="16">
+   <properties>
+    <property name="group" value="stoppers"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="texture" value="transparent"/>
+   </properties>
+  </object>
+  <object id="85" name="stopper" type="stopper" gid="87" x="1200" y="272" width="16" height="16">
+   <properties>
+    <property name="group" value="stoppers"/>
+    <property name="initial_frame" type="int" value="0"/>
+    <property name="texture" value="transparent"/>
    </properties>
   </object>
  </objectgroup>
