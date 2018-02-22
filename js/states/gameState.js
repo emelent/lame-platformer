@@ -91,6 +91,9 @@ lame.GameState = class GameState{
 	    	case "slime":
 	    		EntityType = Slime
 				break
+	    	case "bat":
+	    		EntityType = Bat
+				break
 				
 			case "life":
 				EntityType = Life
