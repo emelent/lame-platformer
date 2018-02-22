@@ -104,6 +104,9 @@ lame.GameState = class GameState{
 			case "stopper":
 				EntityType = Stopper
 				break
+			case "lava":
+				EntityType = Lava
+				break
 
 	    }
 	    if (!EntityType) return null
