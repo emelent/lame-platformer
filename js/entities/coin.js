@@ -9,7 +9,7 @@ class Coin extends Item{
 		this.FLOAT_SPEED = -10
 		this.distanceFloated = 0
 		this.body.velocity.y = this.FLOAT_SPEED 
-		this.collectSound = this.game.add.audio('collect')
+		this.collectSound = this.game.add.audio('coin')
 	}
 
 	update(){

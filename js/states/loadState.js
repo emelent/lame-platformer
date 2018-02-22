@@ -36,7 +36,7 @@ lame.LoadState = class LoadState{
 		this.load.spritesheet(
 			'terminals',
 			'./assets/images/terminals.png', 
-			16, 16
+			16, 32
 		)
 
 		this.load.spritesheet(
@@ -47,11 +47,13 @@ lame.LoadState = class LoadState{
 
 		// LOAD SOME SOUNDS
 		this.load.audio('collect', 'assets/sounds/pickup.wav')
-
+		this.load.audio('jump', 'assets/sounds/jump.wav')
+		this.load.audio('coin', 'assets/sounds/coin.mp3')
+		
 		// LOAD THE LEVEL TILEMAP
 		this.load.tilemap(
 			'level1',
-			'./assets/maps/level1_map.json',
+			'./assets/maps/demo_map.json',
 			null,
 			Phaser.Tilemap.TILED_JSON
 		)

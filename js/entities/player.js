@@ -9,7 +9,7 @@ class Player extends Entity{
 		// add le physics
 		this.game.physics.arcade.enable(this)
 		this.body.collideWorldBounds = true
-
+		this.body.allowGravity = true
 		this.game.camera.follow(this)
 
 		this.animations.add('walk', [0, 1, 2], 5, true)
@@ -20,6 +20,7 @@ class Player extends Entity{
 		this.animations.add('die', [7], 5, true)
 		this.animations.play('idle')
 
+		this.jumpSound = this.game.add.audio('jump')
 		this.cursors = this.game.input.keyboard.createCursorKeys()
 		this.context.players.push(this)
 
@@ -67,8 +68,8 @@ class Player extends Entity{
 
 		if(this.cursors.up.isDown && this.body.blocked.down){	
 			this.body.velocity.y -=400
-
 			this.animations.play('jump')
+			this.jumpSound.play()
 		}
 
 		if(!this.body.blocked.down && !this.body.touching.down){

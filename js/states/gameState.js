@@ -1,4 +1,7 @@
 lame.GameState = class GameState{
+
+	// SPECIAL METHODS
+
 	init(levelData){
 		this.levelData = levelData
 	}
@@ -9,8 +12,22 @@ lame.GameState = class GameState{
 		this.game.physics.startSystem(Phaser.Physics.ARCADE)
 		this.game.physics.arcade.gravity.y = 950
 
+		this.camera.setSize(640, 480)
+		this.prepareMap()
+		this.createGroups()
+		this.createEntities()
+	}
+
+	update(){
+
+	}
+
+	// CUSTOM METHODS
+
+	prepareMap(){
+
 		this.map = this.game.add.tilemap(this.levelData.name)
-		this.map.addTilesetImage('temp_tiles', 'temp')
+		this.map.addTilesetImage('tileset-1', 'tileset-1')
 
 		this.backgroundLayer = this.map.createLayer('background')
 		this.collisionLayer = this.map.createLayer('collision')
@@ -23,15 +40,7 @@ lame.GameState = class GameState{
 		)
 
 		this.backgroundLayer.resizeWorld()
-		this.camera.setSize(640, 480)
-		this.createGroups()
-		this.createEntities()
 	}
-
-	update(){
-
-	}
-
 	createGroups(){
 		this.groups = {}
 		this.levelData.groups.forEach(groupName => {
@@ -76,7 +85,14 @@ lame.GameState = class GameState{
 				
 	    	case "slime":
 	    		EntityType = Slime
-	    		break
+				break
+				
+			case "life":
+				EntityType = Life
+				break
+			case "block":
+				EntityType = Block
+				break
 
 	    }
 	    if (!EntityType) return null
@@ -87,11 +103,7 @@ lame.GameState = class GameState{
     		properties
 		)
 	}
-	render () {
-		// this.game.debug.bodyInfo(this.players[0], 32, 32)
-		// this.game.debug.cameraInfo(this.game.camera,  32, 32)
-	
-	}
+
 	restartLevel(){
     	this.game.state.restart(true, false, this.levelData)
 	}

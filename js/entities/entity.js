@@ -6,7 +6,7 @@ class Entity extends Phaser.Sprite{
 		this.frame = props.initial_frame
 		this.name = props.name
 		this.game.physics.arcade.enable(this)
-
+		this.body.allowGravity = false
 	}
 
 	update(){
