@@ -12,7 +12,7 @@ lame.GameState = class GameState{
 		this.game.physics.startSystem(Phaser.Physics.ARCADE)
 		this.game.physics.arcade.gravity.y = 950
 
-		this.camera.setSize(640, 480)
+		//this.camera.setSize(640, 480)
 		this.prepareMap()
 		this.createGroups()
 		this.createEntities()
